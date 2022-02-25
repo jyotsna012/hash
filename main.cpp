@@ -10,15 +10,17 @@ void addStudent(char* firstName, char* lastName, int studentId, float GPA);
 int numItemsIndex(int index);
 void print();
 
-int main(){
-    struct Student {
-      char firstName[20];
-      char lastName[20];
-      int studentId;
-      float GPA;
-      Student* next;
-    };
+struct Student {
+    char firstName[20];
+    char lastName[20];
+    int studentId;
+    float GPA;
+    Student* next;
+  };
     
+
+int main(){
+
     int tableSize=100;
     Student* HashTable[tableSize];
     hashtable(100, HashTable);
