@@ -26,8 +26,8 @@ int main(){
 }
 
 void hashtable(int ntableSize){
-  Student* HashTable[tableSize];
   int tableSize = ntableSize;
+  Student* HashTable[tableSize];
   char emptys[] = "empty";
   for(int i = 0; i < tableSize; i++){
     HashTable[i] = new Student;
