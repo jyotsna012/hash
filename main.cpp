@@ -9,7 +9,7 @@ int Hash(char* key);
 void addStudent(char* firstName, char* lastName, int studentId, float GPA);
 int numItemsIndex(int index);
 void print();
-void rehash(int tablesize, hashmap Hashy);
+//void rehash(int tablesize, hashmap Hashy);
 
 int main(){
     struct Student {
@@ -141,22 +141,4 @@ int Hash(char* key){
   
 }
 
-void rehash(int tablesize, hashmap Hashy){
-int oldtablesize = tablesize;
-tablesize = tablesize+tablesize;
-hashmap HashyTwo(tablesize);
-for(int i =0; i < oldtablesize; i++){
-  char newfirstName[80];
-  char newlastName[80];
-  int newid;
-  float newgpa;
-  if(Hashy.HashTable[i]->studentId != 0){
-    strcpy(newfirstName, Hashy.HashTable[i]-> firstName);  
-    strcpy(newlastName, Hashy.HashTable[i]->lastName);  
-    newid = Hashy.HashTable[i]->studentId;
-    newgpa = Hashy.HashTable[i]->GPA;
-    HashyTwo.addStudent(newfirstName, newlastName, newid, newgpa); 
-  }
-}
-   HashyTwo.print();
-}
+
