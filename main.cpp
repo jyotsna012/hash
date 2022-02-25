@@ -4,12 +4,6 @@
 
 using namespace std;
 
-void hashtable(int ntableSize, Student* HashTable);
-int Hash(char* key);
-void addStudent(char* firstName, char* lastName, int studentId, float GPA);
-int numItemsIndex(int index);
-void print();
-
 struct Student {
     char firstName[20];
     char lastName[20];
@@ -17,8 +11,13 @@ struct Student {
     float GPA;
     Student* next;
   };
-    
 
+void hashtable(int ntableSize, Student* HashTable);
+int Hash(char* key);
+void addStudent(char* firstName, char* lastName, int studentId, float GPA);
+int numItemsIndex(int index);
+void print();
+    
 int main(){
 
     int tableSize=100;
