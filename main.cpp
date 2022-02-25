@@ -12,7 +12,7 @@ struct Student {
     Student* next;
   };
 
-void hashtable(int ntableSize);
+Student hashtable(int ntableSize);
 int Hash(char* key,  int tableSize);
 void addStudent(char* firstName, char* lastName, int studentId, float GPA);
 int numItemsIndex(int index);
@@ -25,7 +25,7 @@ int main(){
     
 }
 
-void hashtable(int ntableSize){
+Student hashtable(int ntableSize){
   int tableSize = ntableSize;
   Student* HashTable[tableSize];
   char emptys[] = "empty";
@@ -37,6 +37,7 @@ void hashtable(int ntableSize){
     HashTable[i] -> GPA = 0.00;
     HashTable[i] -> next = NULL;
   }
+    return HashTable;
 }
 
 int Hash(char* key, int tableSize){
@@ -54,9 +55,9 @@ int Hash(char* key, int tableSize){
   
 }
 
-void addStudent(char* firstName, char* lastName, int studentId, float GPA){
+void addStudent(char* firstName, char* lastName, int studentId, float GPA, int tableSize){
   
-  int index = Hash(firstName);
+  int index = Hash(firstName, tableSize);
   if(HashTable[index] -> studentId == 0){
     strcpy(HashTable[index]->firstName, firstName);  
     strcpy(HashTable[index]->lastName, lastName);  
