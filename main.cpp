@@ -21,11 +21,11 @@ int main(){
     
     int tableSize=100;
     Student* HashTable[tableSize];
-    hashtable(100);
+    hashtable(100, HashTable);
     
 }
 
-void hashtable(int ntableSize){
+void hashtable(int ntableSize, Student* HashTable){
   int tableSize = ntableSize;
   char emptys[] = "empty";
   for(int i = 0; i < tableSize; i++){
