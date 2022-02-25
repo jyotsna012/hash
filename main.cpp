@@ -13,7 +13,7 @@ struct Student {
   };
 
 void hashtable(int ntableSize);
-int Hash(char* key);
+int Hash(char* key,  int tableSize);
 void addStudent(char* firstName, char* lastName, int studentId, float GPA);
 int numItemsIndex(int index);
 void print();
@@ -39,22 +39,7 @@ void hashtable(int ntableSize){
   }
 }
 
-int Hash(char* key){
-  int hash = 0;
-  int index;
-  
-  index = strlen(key);
-  
-  for(int i =0; i < strlen(key); i++){
-    hash = hash + (int)key[i];
-  }
-  
-  index = hash % tableSize;
-  return index;
-  
-}
-
-int Hash(char* key){
+int Hash(char* key, int tableSize){
   int hash = 0;
   int index;
   
