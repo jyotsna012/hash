@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void hashtable(int ntableSize);
+void hashtable(int ntableSize, Student* HashTable);
 int Hash(char* key);
 void addStudent(char* firstName, char* lastName, int studentId, float GPA);
 int numItemsIndex(int index);
