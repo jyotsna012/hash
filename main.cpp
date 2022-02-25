@@ -12,7 +12,7 @@ struct Student {
     Student* next;
   };
 
-void hashtable(int ntableSize, Student* HashTable);
+void hashtable(int ntableSize);
 int Hash(char* key);
 void addStudent(char* firstName, char* lastName, int studentId, float GPA);
 int numItemsIndex(int index);
@@ -21,12 +21,12 @@ void print();
 int main(){
 
     int tableSize=100;
-    Student* HashTable[tableSize];
-    hashtable(100, HashTable);
+    hashtable(100);
     
 }
 
-void hashtable(int ntableSize, Student* HashTable){
+void hashtable(int ntableSize){
+  Student* HashTable[tableSize];
   int tableSize = ntableSize;
   char emptys[] = "empty";
   for(int i = 0; i < tableSize; i++){
