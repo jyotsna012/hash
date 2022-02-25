@@ -54,38 +54,19 @@ int Hash(char* key){
   
 }
 
-void addStudent(char* firstName, char* lastName, int studentId, float GPA){
+int Hash(char* key){
+  int hash = 0;
+  int index;
   
-  int index = Hash(firstName);
-  if(HashTable[index] -> studentId == 0){
-    strcpy(HashTable[index]->firstName, firstName);  
-    strcpy(HashTable[index]->lastName, lastName);  
-    HashTable[index] -> studentId = studentId;
-    HashTable[index] -> GPA = GPA;
-    HashTable[index] -> next = NULL;
-
-  }
-  else{
+  index = strlen(key);
   
-    Student* ptr = HashTable[index];
-    Student* n = new Student;
-    strcpy(n->firstName, firstName);  
-    strcpy(n->lastName, lastName);  
-    n -> studentId = studentId;
-    n -> GPA = GPA;
-    n->next = NULL;
-    while(ptr -> next != NULL){
-      ptr = ptr -> next;
-    }
-    
-    ptr -> next = n;
-  
+  for(int i =0; i < strlen(key); i++){
+    hash = hash + (int)key[i];
   }
   
-  if(numItemsIndex(index) >= 4){
-
-    cout << "needs to be rehased" << endl;
-  }
+  index = hash % tableSize;
+  return index;
+  
 }
 
 
